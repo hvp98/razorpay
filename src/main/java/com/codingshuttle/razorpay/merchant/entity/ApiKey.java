@@ -1,10 +1,17 @@
 package com.codingshuttle.razorpay.merchant.entity;
 import com.codingshuttle.razorpay.common.enums.Environment;
 import jakarta.persistence.*;
+import lombok.*;
+
 import java.util.UUID;
 
 @Entity
 @Table(name = "api_key")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class ApiKey {
 
     @Id
@@ -18,14 +25,18 @@ public class ApiKey {
     @Column(unique = true, nullable = false, length = 50)
     private String keyId;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, length = 255)
     private String keySecretHash;
+
+    @Column(length = 255)
+    private String previousKeySecretHash;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 10)
     private Environment environment;
 
     @Column(nullable = false)
+    @Builder.Default
     private boolean enabled = true;
 
 
