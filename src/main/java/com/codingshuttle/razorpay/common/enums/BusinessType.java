@@ -9,9 +9,8 @@ public enum BusinessType {
     NGO,
     OTHERS,
     PARTNERSHIP,
-    Private_Limited,
-    Public_Limited,
-    SOLE_PROPRIETOR,
-    Trust
+    PRIVATE_LIMITED,
+    PUBLIC_LIMITED,
+    SOLE_PROPRIETOR
 
 }
